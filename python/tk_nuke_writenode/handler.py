@@ -393,9 +393,13 @@ class TankWriteNodeHandler(object):
             node_name = sg_wn.name()
             node_pos = (sg_wn.xpos(), sg_wn.ypos())
 
-            # create new regular Write node:
-            new_wn = nuke.createNode("Write")
-            new_wn.setSelected(False)
+            # create new regular Write node in root (see self.get_nodes()):
+            nuke.root().begin()
+            try:
+                new_wn = nuke.createNode("Write")
+                new_wn.setSelected(False)
+            finally:
+                nuke.root().end()
 
             # copy across file & proxy knobs (if we've defined a proxy template):
             new_wn["file"].setValue(sg_wn["cached_path"].evaluate())

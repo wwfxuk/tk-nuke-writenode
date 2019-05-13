@@ -302,29 +302,6 @@ Gizmo {
     l ""
     +STARTLINE
  }
-
- addUserKnob {
-    26 WWFX
-    t logo
-    +STARTLINE
-    T ""
- }
-
- addUserKnob {
-    22 farmRender
-    l "SUBMIT TO FARM"
-    T "import DeadlineNukeClient\n\nassetManager.renderChecker()\nassetManager.checkIfSaved()\nassetManager.disableWriteOnRender()\nDeadlineNukeClient.main()"
-    +STARTLINE
- }
-
- addUserKnob {
-    26 info
-    l ""
-    +STARTLINE
-    T
-    "\n\n\nWWFX SHOTGUN render\ntk-nuke-writenode-1.4.2+wwfx.1.0.0\n\n\n"
- }
-
  addUserKnob {
     41 _promoted_0
     l Promoted
@@ -452,6 +429,28 @@ Gizmo {
   name Write1
   xpos 195
   ypos -34
+
+  addUserKnob {
+     26 WWFX
+     t logo
+     +STARTLINE
+     T ""
+  }
+
+  addUserKnob {
+     22 WWFX_FarmRender
+     l "SUBMIT TO FARM"
+     T "import DeadlineNukeClient\n\nassetManager.renderChecker()\nassetManager.checkIfSaved()\nassetManager.disableWriteOnRender()\nDeadlineNukeClient.main()"
+     +STARTLINE
+  }
+
+  addUserKnob {
+     26 WWFX_Version
+     l ""
+     +STARTLINE
+     T
+     "\n\n\nWWFX SHOTGUN render\ntk-nuke-writenode-1.4.2+wwfx.1.1.0\n\n\n"
+  }
  }
 set N11879e50 [stack 0]
  Output {
