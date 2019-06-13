@@ -440,7 +440,7 @@ Gizmo {
   addUserKnob {
      22 WWFX_FarmRender
      l "SUBMIT TO FARM"
-     T "import DeadlineNukeClient\n\nassetManager.renderChecker()\nassetManager.checkIfSaved()\nassetManager.disableWriteOnRender()\nDeadlineNukeClient.main()"
+     T "import DeadlineNukeClient\n\nassetManager.renderChecker()\nassetManager.disableWriteOnRender()\nDeadlineNukeClient.main()"
      +STARTLINE
   }
 
