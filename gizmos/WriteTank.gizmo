@@ -406,7 +406,7 @@ Gizmo {
     20 Python
     l "Python"
  }
- addUserKnob {1 tk_before_render l "before render" T "assetManager.checkPublished()"}
+ addUserKnob {1 tk_before_render l "before render"}
  addUserKnob {41 beforeFrameRender l "before each frame" T Write1.beforeFrameRender}
  addUserKnob {41 afterFrameRender l "after each frame" T Write1.afterFrameRender}
  addUserKnob {1 tk_after_render l "after render"}
