@@ -405,7 +405,9 @@ class TankWriteNodeHandler(object):
                 task.setProgress(int(100 * (count / total)))
 
                 try:
-                    self._convert_sg_to_nuke_write_node(sg_write_node)
+                    # Hide new node properties window when converting multiple
+                    new_wn = self._convert_sg_to_nuke_write_node(sg_write_node)
+                    new_wn.hideControlPanel()
                 except Exception:
                     if nuke.exists(name):
                         sg_write_node.selectOnly()
@@ -426,6 +428,8 @@ class TankWriteNodeHandler(object):
         """Convert a Shotgun Write node to Nuke Write node.
 
         :param nuke.Node sg_wn: Shotgun Write node.
+        :return: New, converted Nuke write node
+        :rtype: nuke.Node
         """
         # set as selected:
         sg_wn.setSelected(True)
@@ -519,6 +523,8 @@ class TankWriteNodeHandler(object):
         new_wn.setName(node_name)
         new_wn.setXpos(node_pos[0])
         new_wn.setYpos(node_pos[1])
+
+        return new_wn
 
     def convert_nuke_to_sg_write_nodes(self):
         """
